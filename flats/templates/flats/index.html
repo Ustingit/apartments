@@ -1,0 +1,9 @@
+{% if latest_flats_list %}
+    <ul>
+    {% for flat in latest_flats_list %}
+        <li><a href="/flats/{{ flat.flat_id }}/">{{ flat.about }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No flats are available.</p>
+{% endif %}
