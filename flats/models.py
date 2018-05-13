@@ -7,7 +7,7 @@ class Flat(models.Model):
     title = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     flat_url = models.CharField(max_length=200)
-    flat_id = models.IntegerField()
+    flat_id = models.IntegerField(primary_key=True)
     price = models.CharField(max_length=50)
     phone_text = models.CharField(max_length=25)
     phone_img = models.ImageField()
