@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+from django.utils import timezone
 
 
 class Flat(models.Model):
@@ -12,3 +14,9 @@ class Flat(models.Model):
     flat_name = models.CharField(max_length=200)
     owner = models.CharField(max_length=100)
     about = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return "id: " + str(self.flat_id) + " title: " + str(self.title) + " .\n"
+
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
