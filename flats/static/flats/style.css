@@ -1,0 +1,17 @@
+#outer_container {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    bottom: 0px;
+    top: 0px;
+    heigth: 100%;
+    background: #FFFFFF;
+}
+li a {
+    color: green;
+}
+header {
+ display: block; /* Для старых браузеров */
+ height: 405px; /* Высота шапки */
+ background: #404448;
+}

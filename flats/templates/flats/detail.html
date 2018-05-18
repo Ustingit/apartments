@@ -1,4 +1,27 @@
-<h1>{{ flat.title }}</h1><br>
-<p> {{ flat.about }} </p><br>
-<p> {{ flat.owner }} </p><br>
-<p> {{ flat.price }} </p><br>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'flats/detail_styles.css' %}" />
+
+<body>
+    <div id="outer_container">
+    <header>
+        <div class="logo_container"></div>
+        <div class="search_container"></div>
+        <div class="buttons_container">
+               <a href="{% url 'detail' flat.flat_id %}">Главная</a>
+            <a href="/">Форум</a>
+               <a href="/">О нас</a>
+               <a href="/">Войти</a>
+        </div>
+    </header>
+
+    <h1>{{ flat.title }}</h1><br>
+    <p> {{ flat.about }} </p><br>
+    <p> {{ flat.owner }} </p><br>
+    <p> {{ flat.price }} </p><br>
+        <footer>
+        <p><strong>Администрация ресурса не несёт отвестввенность за контент, размещённый на сайте пользователями.</strong></p>
+         <p>&copy; Устинович Ю.В. ustinx@mail.ru</p>
+    </footer>
+
+    </div>
+</body>

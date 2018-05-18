@@ -1,9 +1,19 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'flats/style.css' %}" />
+  <!--[if lt IE 9]>
+   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+<body>
+    <div id="outer_container">
 {% if latest_flats_list %}
     <ul>
     {% for flat in latest_flats_list %}
-        <li><a href="/flats/{{ flat.flat_id }}/">{{ flat.about }}</a></li>
+        <li><a href="{% url 'detail' flat.flat_id %}">{{ flat.about }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No flats are available.</p>
 {% endif %}
+        </div>
+</body>
